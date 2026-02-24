@@ -21,4 +21,8 @@ public class RegisterRequest {
     private String website;
     private String companyDescription;
     private String companySize;
+
+    // New fields for security question and answer
+    @NotBlank private String securityQuestion;
+    @NotBlank private String securityAnswer;
 }

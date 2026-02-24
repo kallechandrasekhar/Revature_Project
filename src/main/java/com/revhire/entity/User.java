@@ -33,13 +33,15 @@ public class User extends BaseEntity implements UserDetails {
     @Column(nullable = false)
     private Role role;
 
+    // Security fields for password reset
+    private String securityQuestion;
+    private String securityAnswer;
 
-   @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
-     private JobSeekerProfile jobSeekerProfile;
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+    private JobSeekerProfile jobSeekerProfile;
 
-     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     private EmployerProfile employerProfile;
-
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

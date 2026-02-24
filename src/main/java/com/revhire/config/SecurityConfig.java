@@ -32,39 +32,18 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-
-                        // Public APIs
-                        .requestMatchers(
-                                "/api/health",
-                                "/api/info",
-                                "/api/v1/auth/**"
-                        ).permitAll()
-
-                        // Swagger endpoints
-                        .requestMatchers(
-                                "/swagger-ui/**",
-                                "/v3/api-docs/**",
-                                "/swagger-ui.html"
-                        ).permitAll()
-
-                        // Role-based APIs
+                        .requestMatchers("/api/health", "/api/info", "/api/v1/auth/**").permitAll()
                         .requestMatchers("/api/v1/admin/**").hasRole("ADMIN")
                         .requestMatchers("/api/v1/jobseekers/**").hasRole("JOB_SEEKER")
                         .requestMatchers("/api/v1/employers/**").hasRole("EMPLOYER")
                         .requestMatchers("/api/v1/jobs/**").hasRole("EMPLOYER")
-
-                        // Authenticated APIs
                         .requestMatchers("/api/v1/applications/**").authenticated()
                         .requestMatchers("/api/v1/favourites/**").authenticated()
-
                         .anyRequest().authenticated()
                 )
-                .sessionManagement(sess ->
-                        sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-                )
+                .sessionManagement(sess -> sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authenticationProvider(authenticationProvider())
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
-
         return http.build();
     }
 
@@ -77,8 +56,7 @@ public class SecurityConfig {
     }
 
     @Bean
-    public AuthenticationManager authenticationManager(AuthenticationConfiguration config)
-            throws Exception {
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
         return config.getAuthenticationManager();
     }
 

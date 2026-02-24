@@ -1,9 +1,7 @@
 package com.revhire.controller;
 
 import com.revhire.dto.ApiResponse;
-import com.revhire.dto.auth.AuthResponse;
-import com.revhire.dto.auth.LoginRequest;
-import com.revhire.dto.auth.RegisterRequest;
+import com.revhire.dto.auth.*;
 import com.revhire.service.AuthService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -26,5 +24,23 @@ public class AuthController {
     public ApiResponse<AuthResponse> login(@Valid @RequestBody LoginRequest request) {
         AuthResponse response = authService.login(request);
         return ApiResponse.success("Login successful", response);
+    }
+
+    @PostMapping("/forgot-password")
+    public ApiResponse<SecurityQuestionResponse> forgotPassword(@Valid @RequestBody ForgotPasswordRequest request) {
+        String question = authService.getSecurityQuestion(request.getEmail());
+        return ApiResponse.success("Security question retrieved", new SecurityQuestionResponse(question));
+    }
+
+    @PostMapping("/verify-answer")
+    public ApiResponse<VerifyAnswerResponse> verifyAnswer(@Valid @RequestBody VerifyAnswerRequest request) {
+        String token = authService.verifyAnswerAndGenerateToken(request.getEmail(), request.getAnswer());
+        return ApiResponse.success("Answer verified", new VerifyAnswerResponse(token));
+    }
+
+    @PostMapping("/reset-password")
+    public ApiResponse<Void> resetPassword(@Valid @RequestBody ResetPasswordRequest request) {
+        authService.resetPassword(request.getToken(), request.getNewPassword());
+        return ApiResponse.success("Password reset successfully", null);
     }
 }
