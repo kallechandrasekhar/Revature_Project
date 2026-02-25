@@ -23,7 +23,7 @@ public class JwtService {
     @Value("${jwt.expiration}")
     private long jwtExpiration;
 
-    @Value("${jwt.reset-expiration:900000}") // default 15 minutes
+    @Value("${jwt.reset-expiration:900000}")
     private long resetExpiration;
 
     public String extractUsername(String token) {

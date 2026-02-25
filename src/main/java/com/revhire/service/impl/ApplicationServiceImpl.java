@@ -84,6 +84,28 @@ public class ApplicationServiceImpl implements ApplicationService {
         dto.setStatus(app.getStatus());
         dto.setCoverLetter(app.getCoverLetter());
         dto.setAppliedDate(app.getAppliedDate());
+
+        // ✅ resume fields
+        ResumeText rt = app.getJobSeeker().getResumeText();
+        if (rt != null) {
+            dto.setEducation(rt.getEducation());
+            dto.setExperience(rt.getExperience());
+
+
+            if (rt.getSkills() != null && !rt.getSkills().isBlank()) {
+                List<String> skills = List.of(rt.getSkills().split("[,\\n]"))
+                        .stream()
+                        .map(String::trim)
+                        .filter(s -> !s.isEmpty())
+                        .toList();
+                dto.setSkills(skills);
+            } else {
+                dto.setSkills(List.of());
+            }
+        } else {
+            dto.setSkills(List.of());
+        }
+
         return dto;
     }
 
