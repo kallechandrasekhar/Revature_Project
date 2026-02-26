@@ -1,4 +1,6 @@
 package com.revhire.controller.jobseeker;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
 import org.springframework.http.HttpHeaders;
@@ -30,6 +32,8 @@ import java.io.IOException;
 @RestController
 @RequestMapping("/api/v1/jobseekers")
 @RequiredArgsConstructor
+@Getter
+@Setter
 public class JobSeekerController {
 
     private final JobSeekerService jobSeekerService;
