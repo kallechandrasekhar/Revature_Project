@@ -130,7 +130,6 @@ public class JobSeekerController {
         return ApiResponse.success("Profile retrieved", mapToDto(profile));
     }
 
-    // Helper method to map entity to DTO
     private JobSeekerProfileDto mapToDto(JobSeekerProfile profile) {
         JobSeekerProfileDto dto = new JobSeekerProfileDto();
         dto.setId(profile.getId());
