@@ -1,0 +1,34 @@
+2026-03-02 12:39:32.534 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-03-02 12:39:32.602 [main] INFO  com.revhire.RevHireApplication - Starting RevHireApplication using Java 21.0.8 with PID 4988 (C:\Projects\Rev-Hire\target\classes started by chand in C:\Projects)
+2026-03-02 12:39:32.606 [main] DEBUG com.revhire.RevHireApplication - Running with Spring Boot v3.2.5, Spring v6.1.6
+2026-03-02 12:39:32.609 [main] INFO  com.revhire.RevHireApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-02 12:39:34.318 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-02 12:39:34.452 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 121 ms. Found 9 JPA repository interfaces.
+2026-03-02 12:39:35.430 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-03-02 12:39:35.441 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded Apache Tomcat Native library [2.0.8] using APR version [1.7.4].
+2026-03-02 12:39:35.466 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+2026-03-02 12:39:35.482 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-03-02 12:39:35.487 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-02 12:39:35.487 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-03-02 12:39:35.636 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-03-02 12:39:35.646 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2946 ms
+2026-03-02 12:39:35.951 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-03-02 12:39:36.085 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2026-03-02 12:39:36.151 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-03-02 12:39:36.585 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-02 12:39:36.630 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-02 12:39:36.970 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@fb5d334
+2026-03-02 12:39:36.973 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-02 12:39:37.146 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-02 12:39:37.149 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2026-03-02 12:39:39.358 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-02 12:39:39.684 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-02 12:39:40.327 [main] DEBUG com.revhire.security.JwtAuthFilter - Filter 'jwtAuthFilter' configured for use
+2026-03-02 12:39:40.956 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-02 12:39:41.573 [main] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2a2cdba0, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@31d327b6, org.springframework.security.web.context.SecurityContextHolderFilter@254a9f65, org.springframework.security.web.header.HeaderWriterFilter@7469c73d, org.springframework.web.filter.CorsFilter@5b084c4c, org.springframework.security.web.authentication.logout.LogoutFilter@314b0d53, com.revhire.security.JwtAuthFilter@29390110, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@50c20b15, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6dcf39c6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2b08f55a, org.springframework.security.web.session.SessionManagementFilter@2ab40d2d, org.springframework.security.web.access.ExceptionTranslationFilter@19d043a8, org.springframework.security.web.access.intercept.AuthorizationFilter@688e6d4e]
+2026-03-02 12:39:42.124 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-03-02 12:39:42.160 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2026-03-02 12:39:42.174 [main] INFO  com.revhire.RevHireApplication - Started RevHireApplication in 10.394 seconds (process running for 12.647)
+2026-03-02 12:40:07.124 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-02 12:40:07.127 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-02 12:40:07.151 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
